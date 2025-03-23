@@ -17,7 +17,7 @@ export default function Home() {
       <div className="text-center max-w-md mx-auto w-full mb-10">
         <h1 className="text-2xl font-bold text-gray-900 mb-2">Welcome to PopX</h1>
         <p className="text-gray-500 mb-4">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        choose a button to use popX
         </p>
 
         <div className="flex flex-col gap-2">
