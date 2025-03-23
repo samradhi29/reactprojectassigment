@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function CreateAccount() {
-  const server = "https://popx-hl6a.onrender.com";
+  const server = "";
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
@@ -35,35 +35,35 @@ export default function CreateAccount() {
   };
 
   const renderInputField = (label, type, name, placeholder) => (
-    <fieldset className="mb-2 w-[100%] border border-gray-300 p-1 rounded-md">
-      <legend className="text-gray-700 font-medium text-[10px]">{label}{name !== "companyName" && <span className="text-red-500">*</span>}</legend>
+    <fieldset className="mb-3 w-[100%] border border-gray-300 p-1 rounded-md">
+      <legend className="text-gray-700 font-medium text-sm">{label}{name !== "companyName" && <span className="text-red-500">*</span>}</legend>
       <input
         type={type}
         name={name}
         placeholder={placeholder}
         value={formData[name]}
         onChange={handleChange}
-        className="w-full p-1 border-none focus:outline-none focus:ring-2 focus:ring-purple-500 text-[8px]"
+        className="w-full p-1 border-none focus:outline-none focus:ring-2 focus:ring-purple-500 text-sm"
       />
     </fieldset>
   );
 
   return (
-    <div className="h-screen bg-white p-4 flex flex-col justify-start items-center">
-      <h1 className="text-xl font-bold text-gray-900 mb-4 text-center">
+    <div className="h-[80vh] bg-white p-6 flex flex-col justify-start items-center">
+      <h1 className="text-2xl font-bold text-gray-900 mb-6 text-center">
         Create your <span className="text-purple-700">PopX account</span>
       </h1>
-      <form className="flex flex-col gap-0 text-left w-[30%]" onSubmit={handleSubmit}>
+      <form className="flex flex-col gap-2 text-left w-[80%] max-w-[700px]" onSubmit={handleSubmit}>
         {renderInputField("Full Name", "text", "fullName", "Enter your full name")}
         {renderInputField("Phone number", "tel", "phoneNumber", "Enter your phone number")}
         {renderInputField("Email address", "email", "email", "Enter your email")}
         {renderInputField("Password", "password", "password", "Enter your password")}
         {renderInputField("Company name", "text", "companyName", "Enter your company name")}
 
-        <div className="mt-3 mb-5">
-          <legend>Are you an Agency?<span className="text-red-500">*</span></legend>
-          <div className="flex gap-2 mt-1">
-            <label className="flex items-center gap-1 cursor-pointer text-[10px]">
+        <div className="mt-4 mb-6">
+          <legend className="text-sm">Are you an Agency?<span className="text-red-500">*</span></legend>
+          <div className="flex gap-4 mt-2">
+            <label className="flex items-center gap-2 cursor-pointer text-sm">
               <input
                 type="radio"
                 name="isAgency"
@@ -74,7 +74,7 @@ export default function CreateAccount() {
               />
               Yes
             </label>
-            <label className="flex items-center gap-1 cursor-pointer text-[10px]">
+            <label className="flex items-center gap-2 cursor-pointer text-sm">
               <input
                 type="radio"
                 name="isAgency"
@@ -88,10 +88,10 @@ export default function CreateAccount() {
           </div>
         </div>
 
-        <div className="mt-2 mb-2">
+        <div className="mt-4 mb-4">
           <button
             type="submit"
-            className="bg-purple-700 hover:bg-purple-800 text-white font-semibold py-2 px-3 rounded-md transition-all duration-300 text-xs w-[100%]"
+            className="bg-purple-700 hover:bg-purple-800 text-white font-semibold py-3 px-4 rounded-md transition-all duration-300 text-base w-[100%]"
             disabled={loading}
           >
             {loading ? "Creating..." : "Create Account"}
@@ -100,4 +100,4 @@ export default function CreateAccount() {
       </form>
     </div>
   );
-}
+} 
