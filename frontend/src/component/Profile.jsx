@@ -3,7 +3,7 @@ import axios from "axios";
 import { FaCamera } from "react-icons/fa";
 
 export default function Profile() {
-const server = "http://localhost:5000";
+const server = "https://popx-hl6a.onrender.com";
 
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
