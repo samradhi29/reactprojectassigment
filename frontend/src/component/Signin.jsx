@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export default function Signin() {
-  const server = "http://localhost:5000";
+  const server = "https://popx-hl6a.onrender.com";
   const [formData, setFormData] = useState({
     email: "",
     password: "",
