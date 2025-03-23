@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function CreateAccount() {
-  const server = "http://localhost:5000";
+  const server = "https://popx-hl6a.onrender.com";
   const [formData, setFormData] = useState({
     fullName: "",
     phoneNumber: "",
